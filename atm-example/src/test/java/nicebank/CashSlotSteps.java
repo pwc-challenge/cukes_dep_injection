@@ -1,7 +1,9 @@
 package nicebank;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.junit.Assert;
 
 public class CashSlotSteps {
 
@@ -11,9 +13,9 @@ public class CashSlotSteps {
         this.helper = helper;
     }
 
-    @Then("^\\$(\\d+) should be dispensed$")
-    public void $_should_be_dispensed(int arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    @Given("^\\$(\\d+) should be dispensed$")
+    public void $ShouldBeDispensed(int dollars) throws Throwable {
+        Assert.assertEquals("Incorrect amount dispensed -", dollars,
+                helper.getCashSlot().getContents());
     }
 }
