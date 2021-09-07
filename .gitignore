@@ -1,1 +1,7 @@
 /atm-example/.idea/*
+/atm-example/.classpath
+/atm-example/.project
+*.lst
+*.prefs
+*.iml
+*.class
