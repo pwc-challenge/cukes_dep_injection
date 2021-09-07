@@ -1,6 +1,7 @@
 package nicebank;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.cs.A;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -10,19 +11,19 @@ public class Steps {
 
     class Account{
 
-        private int balance;
+        private Money balance = new Money();
 
-        public void deposit(int amount){
-            balance += amount;
+        public void deposit(Money amount){
+            balance = balance.add(amount);
         }
 
-        public int getBalance() {
+        public Money getBalance() {
             return balance;
         }
     }
 
-    @Given("^I have deposited \\$(\\d+) in my account$")
-    public void i_have_deposited_$_in_my_account(int amount) throws Throwable {
+    @Given("^I have deposited (\\$\\d+\\.\\d+) in my account$")
+    public void i_have_deposited_$_in_my_account(Money amount) throws Throwable {
         Account myAccount = new Account();
         myAccount.deposit(amount);
 
