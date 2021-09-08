@@ -2,7 +2,7 @@ package nicebank;
 
 public class KnowsTheDomain {
     private Account myAccount;
-    private AutomatedTeller automatedTeller;
+    private Teller automatedTeller;
     private CashSlot cashSlot;
 
     public Account getMyAccount() {
@@ -13,9 +13,9 @@ public class KnowsTheDomain {
         return myAccount;
     }
 
-    public AutomatedTeller getTeller() {
+    public Teller getTeller() {
         if (automatedTeller == null){
-            automatedTeller = new AutomatedTeller(getCashSlot());
+            automatedTeller = new AtmUserInterface();
         }
 
         return automatedTeller;

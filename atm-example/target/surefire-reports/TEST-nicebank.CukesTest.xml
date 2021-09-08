@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="nicebank.CukesTest" time="0.383" errors="0" skipped="0">
+<testsuite tests="5" failures="2" name="nicebank.CukesTest" time="0.342" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\bin"/>
@@ -67,7 +67,27 @@
   </properties>
   <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Given I have deposited $100.00 in my account" time="0"/>
   <testcase classname="Scenario: Successful withdrawal from an account in credit" name="When I request $20" time="0"/>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0"/>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="And the balance of my account should be $80.00" time="0"/>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0">
+    <failure message="Incorrect amount dispensed - expected:&lt;20&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Incorrect amount dispensed - expected:&lt;20&gt; but was:&lt;0&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:555)
+	at nicebank.CashSlotSteps.$ShouldBeDispensed(CashSlotSteps.java:16)
+	at ✽.Then $20 should be dispensed(nicebank/cash_withdrawal.feature:5)
+</failure>
+  </testcase>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0">
+    <failure message="Incorrect amount dispensed - expected:&lt;20&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Incorrect amount dispensed - expected:&lt;20&gt; but was:&lt;0&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:555)
+	at nicebank.CashSlotSteps.$ShouldBeDispensed(CashSlotSteps.java:16)
+	at ✽.Then $20 should be dispensed(nicebank/cash_withdrawal.feature:5)
+</failure>
+  </testcase>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="And the balance of my account should be $80.00" time="0">
+    <skipped/>
+  </testcase>
 </testsuite>
