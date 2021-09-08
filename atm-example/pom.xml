@@ -30,6 +30,11 @@
             <version>${picocontainer.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>9.2.0.M0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
